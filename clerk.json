@@ -1,0 +1,11 @@
+{
+  "signIn": {
+    "path": "/sign-in",
+    "style": {
+      "primaryColor": "#000000"
+    }
+  },
+  "signUp": {
+    "path": "/sign-up"
+  }
+}

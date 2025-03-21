@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import React, { ReactNode } from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+
 
 export const metadata: Metadata = {
   title: "Movies | Netflix Clone Site",
@@ -10,10 +11,11 @@ export const metadata: Metadata = {
 
 export default function HomeLayout({ children }: { children: ReactNode }) {
   return (
-    <div>
+    <section className="w-full h-screen">
       <Navbar />
       <main>{children}</main>
       <Footer />
-    </div>
+    </section>
+    
   );
 }
