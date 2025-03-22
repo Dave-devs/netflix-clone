@@ -16,6 +16,6 @@ export default function HomeLayout({ children }: { children: ReactNode }) {
       <main>{children}</main>
       <Footer />
     </section>
-    
+
   );
 }

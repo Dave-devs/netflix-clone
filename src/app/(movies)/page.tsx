@@ -15,7 +15,7 @@ export default function Home() {
                 <MovieSlider category={"upcoming"} headerTitle={"Upcoming"} />
                 <MovieSlider category={"now_playing"} headerTitle={"Top Picks for You"} />
             </main>
-            
+
         </section>
     );
 }

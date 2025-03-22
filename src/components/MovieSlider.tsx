@@ -9,6 +9,7 @@ import { useMovies } from '@/services/queries';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorComponent from './ErrorComponet';
 import TitleCard from './TitleCard';
+import Link from 'next/link';
 
 const MOVIES_PER_PAGE = 5;
 const TILE_WIDTH = 299 + 12; // Movie width + gap
@@ -59,7 +60,10 @@ export default function MovieSlider({ category, headerTitle }: MovieSliderProps)
           transition={{ type: "spring", stiffness: 50, damping: 10 }}
         >
           {(data ?? []).map((movie: Movie) => (
-            <MovieTile key={movie.id} id={movie.id} title={movie.original_title} backdrop_path={movie.poster_path} />
+            <Link href={`/${movie.id}`} key={movie.original_title}>
+              <MovieTile title={movie.original_title} backdrop_path={movie.poster_path} />
+            </Link>
+            
           ))}
         </motion.div>
       </div>

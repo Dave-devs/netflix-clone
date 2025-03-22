@@ -1,4 +1,4 @@
-import { Movie, MovieResponse } from "@/types";
+import { Movie, MovieResponse, Video, VideoResponse } from "@/types";
 import { axiosInstance } from "./axiosInstance";
 
 export const getMovies = async (category: string): Promise<Movie[]> => {
@@ -8,3 +8,11 @@ export const getMovies = async (category: string): Promise<Movie[]> => {
 
   return data.results;
 };
+
+export const getMovieDetails = async (id: string): Promise<Video[]> => {
+  const { data } = await axiosInstance.get<VideoResponse>(
+    `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`
+  );
+
+  return data.results;
+}
